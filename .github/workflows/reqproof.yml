@@ -23,25 +23,10 @@ jobs:
           path: ~/.proof/solvers
           key: proof-solvers-${{ runner.os }}
 
-      - name: Install ReqProof
+      - name: Install ReqProof via Homebrew
         run: |
-          set -euo pipefail
-          # Install via Homebrew tap (works on Linux via linuxbrew)
-          if command -v brew &>/dev/null; then
-            brew tap probelabs/proof
-            brew install proof
-          else
-            # Direct download from R2 CDN
-            arch="$(uname -m)"
-            case "$arch" in
-              x86_64) arch="amd64" ;;
-              aarch64|arm64) arch="arm64" ;;
-            esac
-            url="https://pub-ccebb4aa45944de7a72edc403634a318.r2.dev/releases/latest/proof_linux_${arch}.tar.gz"
-            echo "Downloading $url..."
-            curl -fsSL "$url" | tar xz
-            sudo install -m 0755 proof /usr/local/bin/proof
-          fi
+          brew tap probelabs/proof
+          brew install proof
           proof version
 
       - name: Run ReqProof Audit
