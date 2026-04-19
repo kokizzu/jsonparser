@@ -11,3 +11,4 @@ vendor/github.com/buger/goterm/
 prof.cpu
 prof.mem
 .proof/
+tests/

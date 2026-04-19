@@ -1,9 +1,0 @@
-{
-  "name": "raw_int_token_is_within_int64_range_z3_boundary_01___",
-  "property": "raw_int_token_is_within_int64_range",
-  "source": "z3-boundary",
-  "inputs": null,
-  "expected": {
-    "raw_int_token_is_within_int64_range": true
-  }
-}
