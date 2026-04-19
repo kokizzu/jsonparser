@@ -1,0 +1,70 @@
+{
+  "name": "TC-188: SYS-REQ-047 response coverage (negative)",
+  "requirement": "SYS-REQ-047",
+  "obligation": "response_coverage",
+  "trace_length": 10,
+  "signals": {
+    "not": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "or": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "path_segment_is_negative_array_index": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "returns_not_found_for_negative_array_index": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-047": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  }
+}

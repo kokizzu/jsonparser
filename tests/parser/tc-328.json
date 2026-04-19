@@ -1,0 +1,70 @@
+{
+  "name": "TC-328: SYS-REQ-082 response coverage (negative)",
+  "requirement": "SYS-REQ-082",
+  "obligation": "response_coverage",
+  "trace_length": 10,
+  "signals": {
+    "getunsafestring_input_is_truncated_at_value_boundary": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "not": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "or": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "returns_getunsafestring_error_for_truncated_value": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-082": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  }
+}

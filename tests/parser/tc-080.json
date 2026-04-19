@@ -1,0 +1,82 @@
+{
+  "name": "TC-080: SYS-REQ-020 response coverage (negative)",
+  "requirement": "SYS-REQ-020",
+  "obligation": "response_coverage",
+  "trace_length": 10,
+  "signals": {
+    "not": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "or": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "path_segment_is_object_key": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "returns_value_from_current_scope_object_key": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "segment_is_evaluated_at_current_scope": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-020": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  }
+}

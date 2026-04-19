@@ -1,0 +1,70 @@
+{
+  "name": "TC-099: SYS-REQ-025 response coverage (positive)",
+  "requirement": "SYS-REQ-025",
+  "obligation": "response_coverage",
+  "trace_length": 10,
+  "signals": {
+    "addressed_value_is_string": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "not": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "or": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "returns_unquoted_raw_string_contents": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-025": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

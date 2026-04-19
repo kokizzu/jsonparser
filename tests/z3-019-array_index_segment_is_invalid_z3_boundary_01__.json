@@ -1,0 +1,13 @@
+{
+  "name": "array_index_segment_is_invalid_z3_boundary_01__",
+  "property": "array_index_segment_is_invalid",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "segment": "ACB"
+    }
+  ],
+  "expected": {
+    "array_index_segment_is_invalid": true
+  }
+}

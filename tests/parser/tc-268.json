@@ -1,0 +1,70 @@
+{
+  "name": "TC-268: SYS-REQ-067 response coverage (negative)",
+  "requirement": "SYS-REQ-067",
+  "obligation": "response_coverage",
+  "trace_length": 10,
+  "signals": {
+    "not": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "or": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "parsestring_input_is_empty": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "returns_parsestring_identity_for_empty": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-067": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  }
+}

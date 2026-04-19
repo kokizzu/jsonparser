@@ -1,0 +1,106 @@
+{
+  "name": "TC-034: SYS-REQ-009 trigger coverage (negative)",
+  "requirement": "SYS-REQ-009",
+  "obligation": "trigger_coverage",
+  "trace_length": 10,
+  "signals": {
+    "not": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "or": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "set_creates_missing_path": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "set_path_is_provided": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "set_returns_not_found_error": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "set_returns_updated_document": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "set_target_exists": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-009": [
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

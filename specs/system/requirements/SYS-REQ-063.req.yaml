@@ -1,0 +1,50 @@
+id: SYS-REQ-063
+version: 1
+status: review
+priority: shall
+category: functional
+req_type: guarantee
+fretish: the parser shall always satisfy !raw_string_has_backslash_at_end | returns_error_for_backslash_at_end
+description: When ParseString encounters a string literal ending with a lone backslash (the escape sequence is incomplete because there is no character after the backslash), the parser shall return MalformedValueError.
+formalization_strategy: fretish
+informal_verification:
+    method: ""
+    evidence: ""
+    verified: false
+parent: ""
+component: parser
+rationale: A backslash at the end of a string is the simplest truncated-escape case and exercises the len(in) < 2 guard in unescapeToUTF8.
+tags:
+    - parse
+    - string
+    - escape
+    - edge-case
+variables:
+    - raw_string_has_backslash_at_end
+    - returns_error_for_backslash_at_end
+traces:
+    satisfies:
+        - STK-REQ-007
+    verified_by_extra:
+        - deep_spec_test.go
+verification:
+    assurance_level: E
+    formalization_status: valid
+    review:
+        status: pending
+        reviewer: ""
+        reviewed_at: ""
+        ai_generated: false
+history:
+    created_by: agent:claude
+    created_at: "2026-04-14T18:00:00Z"
+    last_modified_by: agent:claude
+    last_modified_at: "2026-04-14T18:00:00Z"
+obligation_class: truncated_escape_sequence
+lifecycle:
+    change_history:
+        - date: "2026-04-14T18:00:00Z"
+          from: draft
+          to: review
+          reason: Added explicit backslash-at-end rejection requirement for ParseString.
+          changed_by: agent:claude

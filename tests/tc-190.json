@@ -1,0 +1,94 @@
+{
+  "name": "TC-190: SYS-REQ-048 trigger coverage (negative)",
+  "requirement": "SYS-REQ-048",
+  "obligation": "trigger_coverage",
+  "trace_length": 10,
+  "signals": {
+    "and": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "delete_completes_without_panic_on_truncated_value": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "delete_input_is_truncated_at_value_boundary": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "delete_returns_original_input_on_truncated_value": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "not": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "or": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-048": [
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

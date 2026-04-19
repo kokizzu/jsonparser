@@ -1,0 +1,16 @@
+{
+  "name": "returns_oob_array_index_not_found_z3_last_wins_basic",
+  "property": "returns_oob_array_index_not_found",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "returns_oob_array_index_not_found": 2
+    },
+    {
+      "returns_oob_array_index_not_found": 1
+    }
+  ],
+  "expected": {
+    "returns_oob_array_index_not_found": 1
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "name": "TC-290: SYS-REQ-073 trigger coverage (negative)",
+  "requirement": "SYS-REQ-073",
+  "obligation": "trigger_coverage",
+  "trace_length": 10,
+  "signals": {
+    "getstring_addressed_value_is_not_string": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "not": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "or": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "returns_getstring_type_mismatch_error": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-073": [
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

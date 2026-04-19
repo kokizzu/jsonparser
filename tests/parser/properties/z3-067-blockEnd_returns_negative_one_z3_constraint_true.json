@@ -1,0 +1,13 @@
+{
+  "name": "blockEnd_returns_negative_one_z3_constraint_true",
+  "property": "blockEnd_returns_negative_one",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "blockEnd_result": -1
+    }
+  ],
+  "expected": {
+    "blockEnd_returns_negative_one": true
+  }
+}

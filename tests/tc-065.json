@@ -1,0 +1,70 @@
+{
+  "name": "TC-065: SYS-REQ-017 trigger coverage (positive)",
+  "requirement": "SYS-REQ-017",
+  "obligation": "trigger_coverage",
+  "trace_length": 10,
+  "signals": {
+    "input_is_incomplete_during_lookup": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "not": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "or": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "returns_parse_error_for_incomplete_lookup": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-017": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "name": "TC-297: SYS-REQ-075 trigger coverage (positive)",
+  "requirement": "SYS-REQ-075",
+  "obligation": "trigger_coverage",
+  "trace_length": 10,
+  "signals": {
+    "getint_input_is_malformed": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "not": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "or": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "returns_getint_error_for_malformed": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-075": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

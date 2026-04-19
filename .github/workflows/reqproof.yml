@@ -1,0 +1,29 @@
+name: ReqProof Audit
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.13'
+
+      - name: Cache ReqProof solvers
+        uses: actions/cache@v4
+        with:
+          path: ~/.proof/solvers
+          key: proof-solvers-${{ runner.os }}
+
+      - uses: probelabs/proof-action@v1
+        with:
+          fail-level: warn
+          format: markdown

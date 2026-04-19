@@ -1,0 +1,70 @@
+{
+  "name": "TC-251: SYS-REQ-063 response coverage (positive)",
+  "requirement": "SYS-REQ-063",
+  "obligation": "response_coverage",
+  "trace_length": 10,
+  "signals": {
+    "not": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "or": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "raw_string_has_backslash_at_end": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "returns_error_for_backslash_at_end": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-063": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

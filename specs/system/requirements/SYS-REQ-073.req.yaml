@@ -1,0 +1,48 @@
+id: SYS-REQ-073
+version: 1
+status: review
+priority: shall
+category: functional
+req_type: guarantee
+fretish: the parser shall always satisfy !getstring_addressed_value_is_not_string | returns_getstring_type_mismatch_error
+description: When GetString addresses a value that is not a JSON string (e.g., a number, boolean, object, array, or null), the parser shall return a type-mismatch error.
+formalization_strategy: fretish
+informal_verification:
+    method: ""
+    evidence: ""
+    verified: false
+parent: ""
+component: parser
+rationale: GetString has explicit type-checking logic that rejects non-string values. This type-mismatch behavior is distinct from successful string decoding and from malformed-input error propagation.
+tags:
+    - getstring
+    - type-mismatch
+variables:
+    - getstring_addressed_value_is_not_string
+    - returns_getstring_type_mismatch_error
+traces:
+    satisfies:
+        - STK-REQ-002
+    verified_by_extra:
+        - deep_spec_test.go
+verification:
+    assurance_level: E
+    formalization_status: valid
+    review:
+        status: pending
+        reviewer: ""
+        reviewed_at: ""
+        ai_generated: false
+history:
+    created_by: agent:claude
+    created_at: "2026-04-14T18:00:00Z"
+    last_modified_by: agent:claude
+    last_modified_at: "2026-04-14T18:00:00Z"
+obligation_class: type_mismatch
+lifecycle:
+    change_history:
+        - date: "2026-04-14T18:00:00Z"
+          from: draft
+          to: review
+          reason: Added type-mismatch error requirement for GetString.
+          changed_by: agent:claude

@@ -1,0 +1,50 @@
+id: SYS-REQ-037
+version: 1
+status: review
+priority: shall
+category: functional
+req_type: guarantee
+fretish: the parser shall always satisfy raw_float_token_is_well_formed | returns_parsefloat_error
+description: When ParseFloat receives a malformed numeric token, the parser shall return the documented malformed-value error.
+formalization_strategy: fretish
+informal_verification:
+    method: ""
+    evidence: ""
+    verified: false
+parent: ""
+component: parser
+rationale: Malformed-token failure is externally visible and should be specified independently from valid ParseFloat success behavior.
+tags:
+    - decomposition
+    - parse
+    - float
+    - edge-case
+variables:
+    - raw_float_token_is_well_formed
+    - returns_parsefloat_error
+traces:
+    satisfies:
+        - STK-REQ-007
+    verified_by_extra:
+        - parser_test.go
+verification:
+    assurance_level: E
+    formalization_status: valid
+    review:
+        status: pending
+        reviewer: ""
+        reviewed_at: ""
+        ai_generated: false
+history:
+    created_by: agent:codex
+    created_at: "2026-04-14T15:45:00Z"
+    last_modified_by: agent:codex
+    last_modified_at: "2026-04-14T15:45:00Z"
+obligation_class: malformed_input
+lifecycle:
+    change_history:
+        - date: "2026-04-14T15:45:00Z"
+          from: draft
+          to: review
+          reason: Added explicit malformed-token behavior for ParseFloat.
+          changed_by: agent:codex

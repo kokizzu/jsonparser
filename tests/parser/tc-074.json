@@ -1,0 +1,82 @@
+{
+  "name": "TC-074: SYS-REQ-019 trigger coverage (negative)",
+  "requirement": "SYS-REQ-019",
+  "obligation": "trigger_coverage",
+  "trace_length": 10,
+  "signals": {
+    "json_input_is_empty": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "key_path_is_provided": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "not": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "or": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "returns_missing_path_result_for_empty_input": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-019": [
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

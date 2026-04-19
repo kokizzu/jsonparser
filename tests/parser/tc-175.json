@@ -1,0 +1,70 @@
+{
+  "name": "TC-175: SYS-REQ-044 response coverage (positive)",
+  "requirement": "SYS-REQ-044",
+  "obligation": "response_coverage",
+  "trace_length": 10,
+  "signals": {
+    "caller_bounds_checks_tokenEnd_sentinel": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "not": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "or": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "tokenEnd_returns_len_data": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-044": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

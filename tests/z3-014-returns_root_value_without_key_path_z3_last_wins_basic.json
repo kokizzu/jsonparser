@@ -1,0 +1,16 @@
+{
+  "name": "returns_root_value_without_key_path_z3_last_wins_basic",
+  "property": "returns_root_value_without_key_path",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "returns_root_value_without_key_path": 2
+    },
+    {
+      "returns_root_value_without_key_path": 1
+    }
+  ],
+  "expected": {
+    "returns_root_value_without_key_path": 1
+  }
+}

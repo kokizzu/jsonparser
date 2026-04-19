@@ -1,0 +1,70 @@
+{
+  "name": "TC-202: SYS-REQ-051 trigger coverage (negative)",
+  "requirement": "SYS-REQ-051",
+  "obligation": "trigger_coverage",
+  "trace_length": 10,
+  "signals": {
+    "not": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "or": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "set_input_is_truncated": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "set_returns_error_for_truncated_input": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-051": [
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

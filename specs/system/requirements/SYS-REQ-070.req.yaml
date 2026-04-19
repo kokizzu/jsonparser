@@ -1,0 +1,49 @@
+id: SYS-REQ-070
+version: 1
+status: review
+priority: shall
+category: functional
+req_type: guarantee
+fretish: the parser shall always satisfy !set_called_without_path | set_returns_error_without_path
+description: When Set is called without any key path, the parser shall return KeyPathNotFoundError because Set requires at least one path segment to identify the mutation target.
+formalization_strategy: fretish
+informal_verification:
+    method: ""
+    evidence: ""
+    verified: false
+parent: ""
+component: parser
+rationale: Set without a path is a distinct edge case from Delete without a path (which returns empty). Set returns an error, Delete returns empty document. Both no-path behaviors must be explicitly specified.
+tags:
+    - set
+    - edge-case
+    - no-path
+variables:
+    - set_called_without_path
+    - set_returns_error_without_path
+traces:
+    satisfies:
+        - STK-REQ-005
+    verified_by_extra:
+        - deep_spec_test.go
+verification:
+    assurance_level: E
+    formalization_status: valid
+    review:
+        status: pending
+        reviewer: ""
+        reviewed_at: ""
+        ai_generated: false
+history:
+    created_by: agent:claude
+    created_at: "2026-04-14T18:00:00Z"
+    last_modified_by: agent:claude
+    last_modified_at: "2026-04-14T18:00:00Z"
+obligation_class: no_path_provided
+lifecycle:
+    change_history:
+        - date: "2026-04-14T18:00:00Z"
+          from: draft
+          to: review
+          reason: Added explicit Set no-path error requirement.
+          changed_by: agent:claude

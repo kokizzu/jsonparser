@@ -1,0 +1,58 @@
+{
+  "name": "TC-116: SYS-REQ-029 response coverage (negative)",
+  "requirement": "SYS-REQ-029",
+  "obligation": "response_coverage",
+  "trace_length": 10,
+  "signals": {
+    "addressed_array_is_well_formed": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "malformed_array_input_returns_error": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "or": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-029": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "returns_value_from_decoded_escaped_key_z3_last_wins_basic",
+  "property": "returns_value_from_decoded_escaped_key",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "returns_value_from_decoded_escaped_key": 2
+    },
+    {
+      "returns_value_from_decoded_escaped_key": 1
+    }
+  ],
+  "expected": {
+    "returns_value_from_decoded_escaped_key": 1
+  }
+}

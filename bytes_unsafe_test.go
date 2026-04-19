@@ -1,3 +1,4 @@
+//go:build !appengine && !appenginevm
 // +build !appengine,!appenginevm
 
 package jsonparser
@@ -16,16 +17,20 @@ var (
 	benchmarkBytes  = []byte("0123456789y")
 )
 
+// Test helper for SYS-REQ-001 and SYS-REQ-008.
 func bytesEqualStrSafe(abytes []byte, bstr string) bool {
 	return bstr == string(abytes)
 }
 
+// Test helper for SYS-REQ-001 and SYS-REQ-008.
 func bytesEqualStrUnsafeSlower(abytes *[]byte, bstr string) bool {
 	aslicehdr := (*reflect.SliceHeader)(unsafe.Pointer(abytes))
 	astrhdr := reflect.StringHeader{Data: aslicehdr.Data, Len: aslicehdr.Len}
 	return *(*string)(unsafe.Pointer(&astrhdr)) == bstr
 }
 
+// Verifies: SYS-REQ-001
+// MCDC SYS-REQ-001: N/A
 func TestEqual(t *testing.T) {
 	if !equalStr(&[]byte{}, "") {
 		t.Errorf(`equalStr("", ""): expected true, obtained false`)
@@ -48,6 +53,8 @@ func TestEqual(t *testing.T) {
 	}
 }
 
+// Verifies: SYS-REQ-001
+// MCDC SYS-REQ-001: N/A
 func BenchmarkEqualStr(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		equalStr(&benchmarkBytes, benchmarkString)
@@ -55,6 +62,8 @@ func BenchmarkEqualStr(b *testing.B) {
 }
 
 // Alternative implementation without using unsafe
+// Verifies: SYS-REQ-001
+// MCDC SYS-REQ-001: N/A
 func BenchmarkBytesEqualStrSafe(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		bytesEqualStrSafe(benchmarkBytes, benchmarkString)
@@ -62,6 +71,8 @@ func BenchmarkBytesEqualStrSafe(b *testing.B) {
 }
 
 // Alternative implementation using unsafe, but that is slower than the current implementation
+// Verifies: SYS-REQ-001
+// MCDC SYS-REQ-001: N/A
 func BenchmarkBytesEqualStrUnsafeSlower(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		bytesEqualStrUnsafeSlower(&benchmarkBytes, benchmarkString)

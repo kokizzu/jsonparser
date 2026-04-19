@@ -1,0 +1,13 @@
+{
+  "name": "blockEnd_returns_valid_offset_z3_constraint_true",
+  "property": "blockEnd_returns_valid_offset",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "blockEnd_result": 0
+    }
+  ],
+  "expected": {
+    "blockEnd_returns_valid_offset": true
+  }
+}

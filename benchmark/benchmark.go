@@ -1,7 +1,7 @@
 package benchmark
 
 /*
-   Small paylod, http log like structure. Size: 190 bytes
+Small paylod, http log like structure. Size: 190 bytes
 */
 var smallFixture []byte = []byte(`{
     "st": 1,
@@ -28,7 +28,7 @@ type SmallPayload struct {
 }
 
 /*
-   Medium payload (based on Clearbit API response)
+Medium payload (based on Clearbit API response)
 */
 type CBAvatar struct {
 	Url string

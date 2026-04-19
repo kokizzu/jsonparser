@@ -1,0 +1,13 @@
+{
+  "name": "multipath_requests_are_provided_z3_boundary_01__",
+  "property": "multipath_requests_are_provided",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "path_count": 0
+    }
+  ],
+  "expected": {
+    "multipath_requests_are_provided": false
+  }
+}

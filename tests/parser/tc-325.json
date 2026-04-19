@@ -1,0 +1,70 @@
+{
+  "name": "TC-325: SYS-REQ-082 trigger coverage (positive)",
+  "requirement": "SYS-REQ-082",
+  "obligation": "trigger_coverage",
+  "trace_length": 10,
+  "signals": {
+    "getunsafestring_input_is_truncated_at_value_boundary": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "not": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "or": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "returns_getunsafestring_error_for_truncated_value": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-082": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

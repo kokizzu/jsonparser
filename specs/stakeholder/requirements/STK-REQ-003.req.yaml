@@ -1,0 +1,70 @@
+id: STK-REQ-003
+version: 1
+status: review
+priority: shall
+category: functional
+req_type: guarantee
+fretish: ""
+description: Library users shall extract known numeric and boolean JSON values through typed helpers without manual byte parsing or ad-hoc conversions.
+formalization_strategy: informal
+informal_verification:
+    method: ""
+    evidence: ""
+    verified: false
+parent: ""
+component: parser
+rationale: The README presents typed helpers as part of the public API for callers who already know the expected JSON scalar type.
+tags: []
+variables: []
+traces: {}
+verification:
+    assurance_level: E
+    formalization_status: none
+    review:
+        status: pending
+        reviewer: ""
+        reviewed_at: ""
+        ai_generated: false
+history:
+    created_by: human:cli
+    created_at: "2026-04-13T17:10:33Z"
+    last_modified_by: human:cli
+    last_modified_at: "2026-04-13T17:14:56Z"
+stakeholder:
+    persona: Go developers reading known scalar fields from dynamic JSON payloads
+    story: As a Go developer who knows the expected scalar type of a JSON field, I want typed helper accessors so that I can avoid manual byte parsing and get explicit errors on invalid access.
+    acceptance_criteria:
+        - id: AC-1
+          text: A caller can request an integer-valued field through a typed helper and receive the expected int64 result or an error when integer access is invalid.
+          testable: true
+          derived_reqs:
+            - SYS-REQ-003
+            - SYS-REQ-075
+            - SYS-REQ-076
+            - SYS-REQ-077
+            - SYS-REQ-078
+        - id: AC-2
+          text: A caller can request a floating-point field through a typed helper and receive the expected float64 result or an error when float access is invalid.
+          testable: true
+          derived_reqs:
+            - SYS-REQ-004
+        - id: AC-3
+          text: A caller can request a boolean field through a typed helper and receive the expected bool result or an error when boolean access is invalid.
+          testable: true
+          derived_reqs:
+            - SYS-REQ-005
+            - SYS-REQ-079
+    obligation_checklist:
+        - nominal
+        - malformed_input
+        - boundary
+        - type_mismatch
+        - empty_input
+        - partial_literal
+lifecycle:
+    change_history:
+        - date: "2026-04-13T17:14:56Z"
+          from: draft
+          to: review
+          reason: ""
+          changed_by: human:cli

@@ -1,0 +1,13 @@
+{
+  "name": "addressed_value_is_number_z3_constraint_true",
+  "property": "addressed_value_is_number",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "token_type": "number"
+    }
+  ],
+  "expected": {
+    "addressed_value_is_number": true
+  }
+}

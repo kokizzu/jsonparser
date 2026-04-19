@@ -1,0 +1,13 @@
+{
+  "name": "array_index_segment_is_valid_z3_constraint_true",
+  "property": "array_index_segment_is_valid",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "segment": "[A]"
+    }
+  ],
+  "expected": {
+    "array_index_segment_is_valid": true
+  }
+}

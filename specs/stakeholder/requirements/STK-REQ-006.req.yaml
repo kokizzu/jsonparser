@@ -1,0 +1,56 @@
+id: STK-REQ-006
+version: 1
+status: review
+priority: shall
+category: functional
+req_type: guarantee
+fretish: ""
+description: Library users shall retrieve addressed JSON values as zero-allocation raw strings without JSON unescaping when they intentionally choose the unsafe helper.
+formalization_strategy: informal
+informal_verification:
+    method: ""
+    evidence: ""
+    verified: false
+parent: ""
+component: parser
+rationale: GetUnsafeString is a distinct public contract from GetString because it trades escaping semantics for speed and zero-allocation string mapping.
+tags: []
+variables: []
+traces: {}
+verification:
+    assurance_level: E
+    formalization_status: none
+    review:
+        status: pending
+        reviewer: ""
+        reviewed_at: ""
+        ai_generated: false
+history:
+    created_by: human:cli
+    created_at: "2026-04-13T17:21:50Z"
+    last_modified_by: human:cli
+    last_modified_at: "2026-04-13T17:27:00Z"
+stakeholder:
+    persona: Go developers reading JSON tokens with minimal allocations
+    story: As a Go developer reading JSON byte payloads, I want an unsafe helper that exposes addressed values as raw strings without unescaping so that I can avoid extra allocations when I explicitly accept the tradeoff.
+    acceptance_criteria:
+        - id: AC-1
+          text: A caller can retrieve an addressed JSON value through GetUnsafeString and receive the raw bytes as a Go string without JSON unescaping, including the documented lookup-miss behavior from the underlying path lookup.
+          testable: true
+          derived_reqs:
+            - SYS-REQ-011
+            - SYS-REQ-080
+            - SYS-REQ-081
+            - SYS-REQ-082
+    obligation_checklist:
+        - nominal
+        - malformed_input
+        - empty_input
+        - truncated_at_value_boundary
+lifecycle:
+    change_history:
+        - date: "2026-04-13T17:27:00Z"
+          from: draft
+          to: review
+          reason: ""
+          changed_by: human:cli

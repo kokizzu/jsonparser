@@ -1,0 +1,58 @@
+{
+  "name": "TC-147: SYS-REQ-037 response coverage (positive)",
+  "requirement": "SYS-REQ-037",
+  "obligation": "response_coverage",
+  "trace_length": 10,
+  "signals": {
+    "or": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "raw_float_token_is_well_formed": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "returns_parsefloat_error": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-037": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

@@ -6,6 +6,8 @@ import (
 	"testing"
 )
 
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
 func BenchmarkSetLarge(b *testing.B) {
 	b.ReportAllocs()
 

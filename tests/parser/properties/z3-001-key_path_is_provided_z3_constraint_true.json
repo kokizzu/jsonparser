@@ -1,0 +1,13 @@
+{
+  "name": "key_path_is_provided_z3_constraint_true",
+  "property": "key_path_is_provided",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "key_count": 1
+    }
+  ],
+  "expected": {
+    "key_path_is_provided": true
+  }
+}

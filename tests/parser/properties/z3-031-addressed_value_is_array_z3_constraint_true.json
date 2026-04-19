@@ -1,0 +1,13 @@
+{
+  "name": "addressed_value_is_array_z3_constraint_true",
+  "property": "addressed_value_is_array",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "token_type": "array"
+    }
+  ],
+  "expected": {
+    "addressed_value_is_array": true
+  }
+}

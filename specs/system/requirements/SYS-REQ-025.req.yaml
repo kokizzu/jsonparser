@@ -1,0 +1,53 @@
+id: SYS-REQ-025
+version: 1
+status: approved
+priority: shall
+category: functional
+req_type: guarantee
+fretish: the parser shall always satisfy !addressed_value_is_string | returns_unquoted_raw_string_contents
+description: When the addressed value is a JSON string, Get shall return the string token contents without surrounding quotes and without JSON unescaping.
+formalization_strategy: fretish
+informal_verification:
+    method: ""
+    evidence: ""
+    verified: false
+parent: ""
+component: parser
+rationale: Get has a distinct string-return contract from both GetString and GetUnsafeString, so the returned string shape should be modeled explicitly.
+tags:
+    - decomposition
+    - get
+    - string
+variables:
+    - addressed_value_is_string
+    - returns_unquoted_raw_string_contents
+traces:
+    satisfies:
+        - STK-REQ-001
+    verified_by_extra:
+        - deep_spec_test.go
+        - parser_test.go
+verification:
+    assurance_level: B
+    formalization_status: valid
+    review:
+        status: approved
+        reviewer: human:leonidbugaev
+        role: system_owner
+        reviewed_at: "2026-04-18T10:12:51Z"
+        comment: 'Dogfooding: Get lookup behavior reviewed and complete'
+        fingerprint: sha256:f3c94d51f27d887af53d5471d9a45fcfacd9aa5658b485751433df7440c3de2c
+        ai_generated: false
+history:
+    created_by: human:cli
+    created_at: "2026-04-14T00:00:00Z"
+    last_modified_by: human:cli
+    last_modified_at: "2026-04-18T10:12:51Z"
+obligation_class: nominal
+lifecycle:
+    change_history:
+        - date: "2026-04-14T00:00:00Z"
+          from: draft
+          to: review
+          reason: Added explicit string token shape behavior for Get.
+          changed_by: human:cli

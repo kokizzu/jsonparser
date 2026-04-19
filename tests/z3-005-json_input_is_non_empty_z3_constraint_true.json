@@ -1,0 +1,13 @@
+{
+  "name": "json_input_is_non_empty_z3_constraint_true",
+  "property": "json_input_is_non_empty",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "get_input_length": 1
+    }
+  ],
+  "expected": {
+    "json_input_is_non_empty": true
+  }
+}

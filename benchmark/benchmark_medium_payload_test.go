@@ -1,6 +1,6 @@
 /*
-   Each test should process 2.4kb json record (based on Clearbit API)
-   It should read multiple nested fields and 1 array
+Each test should process 2.4kb json record (based on Clearbit API)
+It should read multiple nested fields and 1 array
 */
 package benchmark
 
@@ -25,6 +25,16 @@ import (
 /*
    github.com/buger/jsonparser
 */
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkJsonParserMedium(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		jsonparser.Get(mediumFixture, "person", "name", "fullName")
@@ -38,6 +48,16 @@ func BenchmarkJsonParserMedium(b *testing.B) {
 	}
 }
 
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkJsonParserDeleteMedium(b *testing.B) {
 	fixture := make([]byte, 0, len(mediumFixture))
 	b.ResetTimer()
@@ -51,6 +71,16 @@ func BenchmarkJsonParserDeleteMedium(b *testing.B) {
 	}
 }
 
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkJsonParserEachKeyManualMedium(b *testing.B) {
 	paths := [][]string{
 		[]string{"person", "name", "fullName"},
@@ -77,6 +107,16 @@ func BenchmarkJsonParserEachKeyManualMedium(b *testing.B) {
 	}
 }
 
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkJsonParserEachKeyStructMedium(b *testing.B) {
 	paths := [][]string{
 		[]string{"person", "name", "fullName"},
@@ -115,6 +155,16 @@ func BenchmarkJsonParserEachKeyStructMedium(b *testing.B) {
 	}
 }
 
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkJsonParserObjectEachStructMedium(b *testing.B) {
 	nameKey, githubKey, gravatarKey := []byte("name"), []byte("github"), []byte("gravatar")
 	errStop := errors.New("stop")
@@ -164,6 +214,16 @@ func BenchmarkJsonParserObjectEachStructMedium(b *testing.B) {
 /*
    encoding/json
 */
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkEncodingJsonStructMedium(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		var data MediumPayload
@@ -177,6 +237,16 @@ func BenchmarkEncodingJsonStructMedium(b *testing.B) {
 	}
 }
 
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkEncodingJsonInterfaceMedium(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		var data interface{}
@@ -200,6 +270,16 @@ func BenchmarkEncodingJsonInterfaceMedium(b *testing.B) {
 /*
    github.com/Jeffail/gabs
 */
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkGabsMedium(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		json, _ := gabs.ParseJSON(mediumFixture)
@@ -221,6 +301,16 @@ func BenchmarkGabsMedium(b *testing.B) {
 /*
    github.com/bitly/go-simplejson
 */
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkGoSimpleJsonMedium(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		json, _ := simplejson.NewJson(mediumFixture)
@@ -239,7 +329,16 @@ func BenchmarkGoSimpleJsonMedium(b *testing.B) {
 /*
    github.com/pquerna/ffjson
 */
-
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkFFJsonMedium(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		var data MediumPayload
@@ -256,7 +355,16 @@ func BenchmarkFFJsonMedium(b *testing.B) {
 /*
    github.com/bitly/go-simplejson
 */
-
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkJasonMedium(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		json, _ := jason.NewObjectFromBytes(mediumFixture)
@@ -277,7 +385,16 @@ func BenchmarkJasonMedium(b *testing.B) {
 /*
    github.com/mreiferson/go-ujson
 */
-
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkUjsonMedium(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		json, _ := ujson.NewFromBytes(mediumFixture)
@@ -300,6 +417,16 @@ func BenchmarkUjsonMedium(b *testing.B) {
 /*
    github.com/a8m/djson
 */
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkDjsonMedium(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		m, _ := djson.DecodeObject(mediumFixture)
@@ -320,6 +447,16 @@ func BenchmarkDjsonMedium(b *testing.B) {
 /*
    github.com/ugorji/go/codec
 */
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkUgirjiMedium(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		decoder := codec.NewDecoderBytes(mediumFixture, new(codec.JsonHandle))
@@ -338,6 +475,16 @@ func BenchmarkUgirjiMedium(b *testing.B) {
 /*
    github.com/mailru/easyjson
 */
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkEasyJsonMedium(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		lexer := &jlexer.Lexer{Data: mediumFixture}

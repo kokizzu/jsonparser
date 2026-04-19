@@ -1,0 +1,70 @@
+{
+  "name": "TC-176: SYS-REQ-044 response coverage (negative)",
+  "requirement": "SYS-REQ-044",
+  "obligation": "response_coverage",
+  "trace_length": 10,
+  "signals": {
+    "caller_bounds_checks_tokenEnd_sentinel": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "not": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "or": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "tokenEnd_returns_len_data": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-044": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  }
+}

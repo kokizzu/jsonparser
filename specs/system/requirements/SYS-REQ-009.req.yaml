@@ -1,0 +1,50 @@
+id: SYS-REQ-009
+version: 1
+status: review
+priority: shall
+category: functional
+req_type: guarantee
+fretish: the parser shall always satisfy !set_path_is_provided | set_target_exists | set_creates_missing_path | set_returns_updated_document | set_returns_not_found_error
+description: When Set is called with a provided path, the parser shall either replace the existing addressed value, create a supported missing path and return the updated JSON document, or return `KeyPathNotFoundError` when the requested mutation path is not usable for the provided input.
+formalization_strategy: fretish
+informal_verification:
+    method: ""
+    evidence: ""
+    verified: false
+parent: ""
+component: parser
+rationale: Set is the documented experimental mutation helper and must preserve defined behavior for addressed path updates and invalid mutation inputs.
+tags: []
+variables:
+    - set_path_is_provided
+    - set_target_exists
+    - set_creates_missing_path
+    - set_returns_updated_document
+    - set_returns_not_found_error
+traces:
+    satisfies:
+        - STK-REQ-005
+    verified_by_extra:
+        - mcdc_supplement_test.go
+        - set_spec_test.go
+verification:
+    assurance_level: E
+    formalization_status: valid
+    review:
+        status: pending
+        reviewer: ""
+        reviewed_at: ""
+        ai_generated: false
+history:
+    created_by: human:cli
+    created_at: "2026-04-13T17:15:31Z"
+    last_modified_by: human:cli
+    last_modified_at: "2026-04-13T17:16:45Z"
+obligation_class: nominal
+lifecycle:
+    change_history:
+        - date: "2026-04-13T17:16:45Z"
+          from: draft
+          to: review
+          reason: ""
+          changed_by: human:cli

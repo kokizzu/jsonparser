@@ -1,0 +1,13 @@
+{
+  "name": "addressed_object_is_non_empty_z3_boundary_01__",
+  "property": "addressed_object_is_non_empty",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "entry_count": 0
+    }
+  ],
+  "expected": {
+    "addressed_object_is_non_empty": false
+  }
+}

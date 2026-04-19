@@ -1,0 +1,9 @@
+{
+  "name": "raw_int_token_is_at_int64_max_boundary_z3_constraint_true",
+  "property": "raw_int_token_is_at_int64_max_boundary",
+  "source": "z3-boundary",
+  "inputs": null,
+  "expected": {
+    "raw_int_token_is_at_int64_max_boundary": true
+  }
+}

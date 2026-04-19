@@ -1,0 +1,14 @@
+{
+  "name": "array_index_is_out_of_bounds_z3_boundary_02___",
+  "property": "array_index_is_out_of_bounds",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "array_length": 0,
+      "index": 0
+    }
+  ],
+  "expected": {
+    "array_index_is_out_of_bounds": true
+  }
+}

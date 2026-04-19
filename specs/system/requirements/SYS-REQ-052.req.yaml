@@ -1,0 +1,49 @@
+id: SYS-REQ-052
+version: 1
+status: review
+priority: shall
+category: functional
+req_type: guarantee
+fretish: the parser shall always satisfy !array_callback_returns_error | array_callback_error_is_propagated
+description: When ArrayEach iterates a well-formed array and the Get call for an element returns an error (e.g., due to a truncated element within the array), ArrayEach shall propagate that error to the caller rather than silently continuing iteration.
+formalization_strategy: fretish
+informal_verification:
+    method: ""
+    evidence: ""
+    verified: false
+parent: ""
+component: parser
+rationale: ArrayEach error propagation from element-level Get failures is a distinct contract from ObjectEach callback error propagation (SYS-REQ-032) and from malformed-array input (SYS-REQ-029).
+tags:
+    - arrayeach
+    - callback
+    - error-propagation
+variables:
+    - array_callback_returns_error
+    - array_callback_error_is_propagated
+traces:
+    satisfies:
+        - STK-REQ-004
+    verified_by_extra:
+        - deep_spec_test.go
+verification:
+    assurance_level: E
+    formalization_status: valid
+    review:
+        status: pending
+        reviewer: ""
+        reviewed_at: ""
+        ai_generated: false
+history:
+    created_by: agent:claude
+    created_at: "2026-04-14T18:00:00Z"
+    last_modified_by: agent:claude
+    last_modified_at: "2026-04-14T18:00:00Z"
+obligation_class: callback_error_propagation
+lifecycle:
+    change_history:
+        - date: "2026-04-14T18:00:00Z"
+          from: draft
+          to: review
+          reason: Added explicit callback-error propagation behavior for ArrayEach.
+          changed_by: agent:claude

@@ -1,0 +1,13 @@
+{
+  "name": "parseboolean_input_is_non_empty_z3_constraint_true",
+  "property": "parseboolean_input_is_non_empty",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "parseboolean_input_length": 1
+    }
+  ],
+  "expected": {
+    "parseboolean_input_is_non_empty": true
+  }
+}

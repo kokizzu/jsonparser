@@ -1,0 +1,58 @@
+{
+  "name": "TC-149: SYS-REQ-038 trigger coverage (positive)",
+  "requirement": "SYS-REQ-038",
+  "obligation": "trigger_coverage",
+  "trace_length": 10,
+  "signals": {
+    "or": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "raw_string_literal_is_well_formed": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "returns_parsestring_error": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-038": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

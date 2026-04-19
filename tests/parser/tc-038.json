@@ -1,0 +1,58 @@
+{
+  "name": "TC-038: SYS-REQ-010 trigger coverage (negative)",
+  "requirement": "SYS-REQ-010",
+  "obligation": "trigger_coverage",
+  "trace_length": 10,
+  "signals": {
+    "delete_path_is_provided": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "delete_returns_empty_document_without_path": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "or": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-010": [
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

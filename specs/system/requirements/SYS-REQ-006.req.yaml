@@ -1,0 +1,56 @@
+id: SYS-REQ-006
+version: 1
+status: review
+priority: shall
+category: functional
+req_type: guarantee
+fretish: the parser shall always satisfy !addressed_array_is_well_formed | addressed_array_is_empty | array_callback_receives_elements_in_order
+description: When ArrayEach addresses a well-formed non-empty JSON array, the parser shall invoke the callback for each addressed array element in encounter order.
+formalization_strategy: fretish
+informal_verification:
+    method: ""
+    evidence: ""
+    verified: false
+parent: ""
+component: parser
+rationale: Ordered iteration over addressed array contents is a distinct externally visible behavior from empty-array handling and malformed-input handling.
+tags:
+    - decomposition
+    - arrayeach
+    - traversal
+variables:
+    - addressed_array_is_well_formed
+    - addressed_array_is_empty
+    - array_callback_receives_elements_in_order
+traces:
+    satisfies:
+        - STK-REQ-004
+    verified_by_extra:
+        - mcdc_supplement_test.go
+        - parser_test.go
+verification:
+    assurance_level: E
+    formalization_status: valid
+    review:
+        status: pending
+        reviewer: ""
+        reviewed_at: ""
+        ai_generated: false
+history:
+    created_by: human:cli
+    created_at: "2026-04-13T17:10:56Z"
+    last_modified_by: agent:codex
+    last_modified_at: "2026-04-14T15:45:00Z"
+obligation_class: nominal
+lifecycle:
+    change_history:
+        - date: "2026-04-13T17:14:56Z"
+          from: draft
+          to: review
+          reason: ""
+          changed_by: human:cli
+        - date: "2026-04-14T15:45:00Z"
+          from: review
+          to: review
+          reason: Narrowed ArrayEach success behavior to the non-empty ordered-iteration case.
+          changed_by: agent:codex

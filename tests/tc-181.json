@@ -1,0 +1,70 @@
+{
+  "name": "TC-181: SYS-REQ-046 trigger coverage (positive)",
+  "requirement": "SYS-REQ-046",
+  "obligation": "trigger_coverage",
+  "trace_length": 10,
+  "signals": {
+    "blockEnd_returns_negative_one": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "caller_handles_blockEnd_sentinel": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "not": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "or": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-046": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

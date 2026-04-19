@@ -1,0 +1,13 @@
+{
+  "name": "parseint_input_is_non_empty_z3_boundary_01__",
+  "property": "parseint_input_is_non_empty",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "parseint_input_length": 0
+    }
+  ],
+  "expected": {
+    "parseint_input_is_non_empty": false
+  }
+}

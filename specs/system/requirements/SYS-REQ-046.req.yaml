@@ -1,0 +1,48 @@
+id: SYS-REQ-046
+version: 1
+status: review
+priority: shall
+category: functional
+req_type: guarantee
+fretish: the parser shall always satisfy !blockEnd_returns_negative_one | caller_handles_blockEnd_sentinel
+description: When internal helper blockEnd returns -1 indicating no matching closing bracket or brace was found, all callers of blockEnd shall treat this as a malformed-structure condition and shall not proceed with normal value extraction.
+formalization_strategy: fretish
+informal_verification:
+    method: ""
+    evidence: ""
+    verified: false
+parent: ""
+component: parser
+rationale: blockEnd returning -1 is a sentinel value that indicates truncated or malformed structural input. All callers must check for this before using the return value as an offset.
+tags:
+    - sentinel
+    - data-constraint
+variables:
+    - blockEnd_returns_negative_one
+    - caller_handles_blockEnd_sentinel
+traces:
+    satisfies:
+        - STK-REQ-001
+    verified_by_extra:
+        - deep_spec_test.go
+verification:
+    assurance_level: E
+    formalization_status: valid
+    review:
+        status: pending
+        reviewer: ""
+        reviewed_at: ""
+        ai_generated: false
+history:
+    created_by: agent:claude
+    created_at: "2026-04-14T18:00:00Z"
+    last_modified_by: agent:claude
+    last_modified_at: "2026-04-14T18:00:00Z"
+obligation_class: sentinel_value_boundary
+lifecycle:
+    change_history:
+        - date: "2026-04-14T18:00:00Z"
+          from: draft
+          to: review
+          reason: Added explicit sentinel-value boundary requirement for blockEnd callers.
+          changed_by: agent:claude

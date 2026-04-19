@@ -1,0 +1,13 @@
+{
+  "name": "addressed_array_is_non_empty_z3_boundary_01__",
+  "property": "addressed_array_is_non_empty",
+  "source": "z3-boundary",
+  "inputs": [
+    {
+      "element_count": 0
+    }
+  ],
+  "expected": {
+    "addressed_array_is_non_empty": false
+  }
+}

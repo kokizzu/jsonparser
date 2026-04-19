@@ -1,0 +1,58 @@
+{
+  "name": "TC-142: SYS-REQ-036 trigger coverage (negative)",
+  "requirement": "SYS-REQ-036",
+  "obligation": "trigger_coverage",
+  "trace_length": 10,
+  "signals": {
+    "or": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "raw_boolean_literal_is_valid": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "returns_parseboolean_error": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "expected_holds": {
+    "SYS-REQ-036": [
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}
