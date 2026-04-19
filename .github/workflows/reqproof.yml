@@ -4,6 +4,9 @@ on:
     branches: [main]
   pull_request:
 
+env:
+  PROOF_VERSION: "0.1.0-main.20260404054230"
+
 jobs:
   audit:
     runs-on: ubuntu-latest
@@ -23,10 +26,18 @@ jobs:
           path: ~/.proof/solvers
           key: proof-solvers-${{ runner.os }}
 
-      - name: Install ReqProof via Homebrew
+      - name: Install ReqProof
         run: |
-          brew tap probelabs/proof
-          brew install proof
+          set -euo pipefail
+          arch="$(uname -m)"
+          case "$arch" in
+            x86_64) arch="amd64" ;;
+            aarch64|arm64) arch="arm64" ;;
+          esac
+          url="https://downloads.reqproof.com/releases/${PROOF_VERSION}/proof_${PROOF_VERSION}_linux_${arch}.tar.gz"
+          echo "Downloading $url..."
+          curl -fsSL "$url" | tar xz
+          sudo install -m 0755 proof /usr/local/bin/proof
           proof version
 
       - name: Run ReqProof Audit
