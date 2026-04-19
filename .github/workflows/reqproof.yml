@@ -7,10 +7,6 @@ on:
 jobs:
   audit:
     runs-on: ubuntu-latest
-    # ReqProof is currently in private beta. This workflow will activate
-    # once proof is available via public releases or the Homebrew tap.
-    # Until then, the job succeeds without running the audit.
-    if: false
     steps:
       - uses: actions/checkout@v4
         with:
@@ -27,7 +23,30 @@ jobs:
           path: ~/.proof/solvers
           key: proof-solvers-${{ runner.os }}
 
-      - uses: probelabs/proof-action@v1
-        with:
-          fail-level: warn
-          format: markdown
+      - name: Install ReqProof
+        run: |
+          set -euo pipefail
+          # Install via Homebrew tap (works on Linux via linuxbrew)
+          if command -v brew &>/dev/null; then
+            brew tap probelabs/proof
+            brew install proof
+          else
+            # Direct download from R2 CDN
+            arch="$(uname -m)"
+            case "$arch" in
+              x86_64) arch="amd64" ;;
+              aarch64|arm64) arch="arm64" ;;
+            esac
+            url="https://pub-ccebb4aa45944de7a72edc403634a318.r2.dev/releases/latest/proof_linux_${arch}.tar.gz"
+            echo "Downloading $url..."
+            curl -fsSL "$url" | tar xz
+            sudo install -m 0755 proof /usr/local/bin/proof
+          fi
+          proof version
+
+      - name: Run ReqProof Audit
+        run: |
+          set +e
+          proof audit --fail-level warn --format markdown | tee $GITHUB_STEP_SUMMARY
+          exit_code=$?
+          exit $exit_code
