@@ -11,7 +11,6 @@ informal_verification:
     method: ""
     evidence: ""
     verified: false
-parent: ""
 component: parser
 rationale: Incomplete or truncated input is a distinct externally visible failure mode in Get and should be modeled independently from successful lookup, empty-input, tolerated malformed-input, or not-found behavior.
 tags:

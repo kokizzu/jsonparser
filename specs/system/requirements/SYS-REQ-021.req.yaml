@@ -11,7 +11,6 @@ informal_verification:
     method: ""
     evidence: ""
     verified: false
-parent: ""
 component: parser
 rationale: Array index path segments are part of the documented public lookup contract and are behaviorally distinct from object-key segments.
 tags:

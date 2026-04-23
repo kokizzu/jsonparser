@@ -11,7 +11,6 @@ informal_verification:
     method: ""
     evidence: ""
     verified: false
-parent: ""
 component: parser
 rationale: Mid-structure truncation in Delete exercises both internalGet and findKeyStart with incomplete structural input, which is a distinct truncation pattern from at-value-boundary.
 tags:
@@ -33,9 +32,9 @@ verification:
     assurance_level: E
     formalization_status: valid
     review:
-        status: pending
-        reviewer: ""
-        reviewed_at: ""
+        status: approved
+        reviewer: human:leonidbugaev
+        reviewed_at: "2026-04-23T00:00:00Z"
         ai_generated: false
 history:
     created_by: agent:claude

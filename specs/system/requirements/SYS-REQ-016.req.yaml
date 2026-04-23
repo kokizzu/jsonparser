@@ -11,7 +11,6 @@ informal_verification:
     method: ""
     evidence: ""
     verified: false
-parent: ""
 component: parser
 rationale: The Get contract is not complete unless the missing-path outcome is specified independently from successful lookup and incomplete-input failure.
 tags:

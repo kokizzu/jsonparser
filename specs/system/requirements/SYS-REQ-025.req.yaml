@@ -11,7 +11,6 @@ informal_verification:
     method: ""
     evidence: ""
     verified: false
-parent: ""
 component: parser
 rationale: Get has a distinct string-return contract from both GetString and GetUnsafeString, so the returned string shape should be modeled explicitly.
 tags:

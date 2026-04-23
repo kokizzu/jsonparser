@@ -11,7 +11,6 @@ informal_verification:
     method: ""
     evidence: ""
     verified: false
-parent: ""
 component: parser
 rationale: Malformed array-index syntax is an externally visible path-interpretation case and should not be hidden inside a generic lookup-miss predicate.
 tags:

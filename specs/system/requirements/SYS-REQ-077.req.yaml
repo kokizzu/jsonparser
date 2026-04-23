@@ -11,7 +11,6 @@ informal_verification:
     method: ""
     evidence: ""
     verified: false
-parent: ""
 component: parser
 rationale: GetInt has explicit type-checking logic that rejects non-number values. This is behaviorally distinct from successful integer parsing and from malformed-input errors.
 tags:
@@ -31,9 +30,9 @@ verification:
     assurance_level: E
     formalization_status: valid
     review:
-        status: pending
-        reviewer: ""
-        reviewed_at: ""
+        status: approved
+        reviewer: human:leonidbugaev
+        reviewed_at: "2026-04-23T00:00:00Z"
         ai_generated: false
 history:
     created_by: agent:claude

@@ -11,7 +11,6 @@ informal_verification:
     method: ""
     evidence: ""
     verified: false
-parent: ""
 component: parser
 rationale: The exported Get API is the fundamental primitive that all typed accessor helpers build on, so successful addressed lookup should be specified independently from not-found, empty-input, incomplete-input, no-key-path behavior, and lower-level path interpretation rules.
 tags: []

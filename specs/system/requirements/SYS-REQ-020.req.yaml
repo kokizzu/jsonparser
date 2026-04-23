@@ -11,7 +11,6 @@ informal_verification:
     method: ""
     evidence: ""
     verified: false
-parent: ""
 component: parser
 rationale: Correct lookup depends on respecting JSON structural scope rather than matching a similarly named key in a sibling or deeper subtree.
 tags:

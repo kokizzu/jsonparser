@@ -11,7 +11,6 @@ informal_verification:
     method: ""
     evidence: ""
     verified: false
-parent: ""
 component: parser
 rationale: Get has special root-extraction behavior when no key path is provided, so that contract should be modeled independently from addressed lookup.
 tags:

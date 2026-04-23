@@ -11,7 +11,6 @@ informal_verification:
     method: ""
     evidence: ""
     verified: false
-parent: ""
 component: parser
 rationale: The current implementation intentionally tolerates some malformed-document cases for performance, and that externally visible behavior should be either specified or explicitly retired from the contract.
 tags:
