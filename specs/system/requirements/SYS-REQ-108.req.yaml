@@ -5,12 +5,7 @@ priority: shall
 category: functional
 req_type: guarantee
 fretish: the parser shall always satisfy !parsestring_input_has_standard_escapes | parsestring_roundtrip_preserves_semantics
-description: >-
-    When ParseString is called on a byte slice containing standard JSON escape
-    sequences (backslash-n, backslash-t, double backslash, backslash-solidus,
-    backslash-doublequote, backslash-uXXXX), the decoded Go string shall contain
-    the correct Unicode codepoints such that re-encoding to JSON would produce
-    semantically equivalent escape sequences.
+description: When ParseString is called on a byte slice containing standard JSON escape sequences (backslash-n, backslash-t, double backslash, backslash-solidus, backslash-doublequote, backslash-uXXXX), the decoded Go string shall contain the correct Unicode codepoints such that re-encoding to JSON would produce semantically equivalent escape sequences.
 formalization_strategy: fretish
 informal_verification:
     method: ""
@@ -31,6 +26,8 @@ traces:
         - obligation_property_test.go
     documented_by_extra:
         - README.md
+    reviewed_at: "2026-04-27T06:25:19.433955Z"
+    reviewed_by: human:leonidbugaev
 verification:
     assurance_level: E
     formalization_status: valid
