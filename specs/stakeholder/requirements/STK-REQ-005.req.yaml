@@ -1,0 +1,91 @@
+id: STK-REQ-005
+version: 1
+status: review
+priority: shall
+category: functional
+req_type: guarantee
+fretish: ""
+description: Library users shall update or delete addressed JSON values in byte payloads through the experimental mutation helpers with deterministic edge-case behavior.
+formalization_strategy: informal
+informal_verification:
+    method: ""
+    evidence: ""
+    verified: false
+component: parser
+rationale: Set and Delete are documented experimental APIs, so their mutation and malformed-input behavior still needs explicit contract coverage.
+tags:
+    - mutation
+    - decomposition
+variables: []
+traces:
+    documented_by_extra:
+        - README.md
+    reviewed_at: "2026-04-27T06:25:19.204096Z"
+    reviewed_by: human:leonidbugaev
+verification:
+    assurance_level: E
+    formalization_status: none
+    review:
+        status: approved
+        reviewer: human:leonidbugaev
+        reviewed_at: "2026-04-23T00:00:00Z"
+        ai_generated: false
+history:
+    created_by: human:cli
+    created_at: "2026-04-13T17:15:31Z"
+    last_modified_by: agent:codex
+    last_modified_at: "2026-04-14T15:45:00Z"
+stakeholder:
+    persona: Go developers mutating dynamic JSON payloads in-place
+    story: As a Go developer mutating JSON byte payloads, I want experimental helpers that update or delete addressed values with deterministic edge-case behavior so that I can transform payloads without writing my own low-level mutator.
+    acceptance_criteria:
+        - id: AC-1
+          text: A caller can update an existing addressed JSON value or create a supported missing addressed value through Set and receive the expected mutated payload, or a defined error when the requested mutation path is unusable.
+          testable: true
+          derived_reqs:
+            - SYS-REQ-009
+            - SYS-REQ-051
+            - SYS-REQ-068
+            - SYS-REQ-069
+            - SYS-REQ-070
+        - id: AC-2
+          text: A caller can delete an addressed JSON value through Delete and receive either the expected mutated payload, the unchanged original payload for a missing addressed target in otherwise usable input, or the unchanged original payload for malformed, truncated, or otherwise unusable input, without process crash or panic.
+          testable: true
+          derived_reqs:
+            - SYS-REQ-010
+            - SYS-REQ-033
+            - SYS-REQ-034
+            - SYS-REQ-035
+            - SYS-REQ-048
+            - SYS-REQ-049
+            - SYS-REQ-050
+            - SYS-REQ-056
+            - SYS-REQ-100
+            - SYS-REQ-101
+            - SYS-REQ-102
+    obligation_checklist:
+        - nominal
+        - missing_path
+        - malformed_input
+        - truncated_at_value_boundary
+        - truncated_mid_structure
+        - empty_input
+        - no_path_provided
+        - nested_mutation
+        - error_propagation
+        - sentinel_value_boundary
+        - idempotency
+        - nil_safety
+        - edge_case
+lifecycle:
+    change_history:
+        - date: "2026-04-13T17:16:45Z"
+          from: draft
+          to: review
+          reason: ""
+          changed_by: human:cli
+        - date: "2026-04-14T15:45:00Z"
+          from: review
+          to: review
+          reason: Strengthened mutation acceptance criteria to distinguish missing-target and unusable-input Delete behavior.
+          changed_by: agent:codex

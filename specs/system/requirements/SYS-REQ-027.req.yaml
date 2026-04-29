@@ -1,0 +1,56 @@
+id: SYS-REQ-027
+version: 1
+status: approved
+priority: shall
+category: functional
+req_type: guarantee
+fretish: the parser shall always satisfy !addressed_token_shape_is_invalid | returns_value_type_error
+description: When the addressed token cannot be classified as string, object, array, number, boolean, or null, Get shall return a value-type error instead of a successful classification.
+formalization_strategy: fretish
+informal_verification:
+    method: ""
+    evidence: ""
+    verified: false
+component: parser
+rationale: Unknown token classification is an externally visible error path in Get and should not be hidden inside a generic parse-failure bucket.
+tags:
+    - decomposition
+    - get
+    - type
+variables:
+    - addressed_token_shape_is_invalid
+    - returns_value_type_error
+traces:
+    satisfies:
+        - STK-REQ-001
+    verified_by_extra:
+        - deep_spec_test.go
+        - parser_test.go
+    documented_by_extra:
+        - README.md
+    reviewed_at: "2026-04-27T06:25:19.264516Z"
+    reviewed_by: human:leonidbugaev
+verification:
+    assurance_level: B
+    formalization_status: valid
+    review:
+        status: approved
+        reviewer: human:leonidbugaev
+        role: system_owner
+        reviewed_at: "2026-04-18T10:12:52Z"
+        comment: 'Dogfooding: Get lookup behavior reviewed and complete'
+        fingerprint: sha256:59298826dec2ca7db7c1f195d87d0ea4d2119f4a771466d48a7073a9bcc1f5d6
+        ai_generated: false
+history:
+    created_by: human:cli
+    created_at: "2026-04-14T00:00:00Z"
+    last_modified_by: human:cli
+    last_modified_at: "2026-04-18T10:12:52Z"
+obligation_class: type_mismatch
+lifecycle:
+    change_history:
+        - date: "2026-04-14T00:00:00Z"
+          from: draft
+          to: review
+          reason: Added explicit invalid-token-shape behavior for Get.
+          changed_by: human:cli

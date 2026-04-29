@@ -1,6 +1,6 @@
 /*
-   Each test should process 190 byte http log like json record
-   It should read multiple fields
+Each test should process 190 byte http log like json record
+It should read multiple fields
 */
 package benchmark
 
@@ -23,11 +23,22 @@ import (
 )
 
 // Just for emulating field access, so it will not throw "evaluated but not used"
+// Benchmark helper for STK-REQ-001, STK-REQ-003, STK-REQ-004, STK-REQ-005, and STK-REQ-007.
 func nothing(_ ...interface{}) {}
 
 /*
    github.com/buger/jsonparser
 */
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkJsonParserSmall(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		jsonparser.Get(smallFixture, "uuid")
@@ -39,6 +50,16 @@ func BenchmarkJsonParserSmall(b *testing.B) {
 	}
 }
 
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkJsonParserEachKeyManualSmall(b *testing.B) {
 	paths := [][]string{
 		[]string{"uuid"},
@@ -63,6 +84,16 @@ func BenchmarkJsonParserEachKeyManualSmall(b *testing.B) {
 	}
 }
 
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkJsonParserEachKeyStructSmall(b *testing.B) {
 	paths := [][]string{
 		[]string{"uuid"},
@@ -93,6 +124,16 @@ func BenchmarkJsonParserEachKeyStructSmall(b *testing.B) {
 	}
 }
 
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkJsonParserObjectEachStructSmall(b *testing.B) {
 	uuidKey, tzKey, uaKey, stKey := []byte("uuid"), []byte("tz"), []byte("ua"), []byte("st")
 	errStop := errors.New("stop")
@@ -131,6 +172,16 @@ func BenchmarkJsonParserObjectEachStructSmall(b *testing.B) {
 	}
 }
 
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkJsonParserSetSmall(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		jsonparser.Set(smallFixture, []byte(`"c90927dd-1588-4fe7-a14f-8a8950cfcbd8"`), "uuid")
@@ -142,6 +193,16 @@ func BenchmarkJsonParserSetSmall(b *testing.B) {
 	}
 }
 
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkJsonParserDelSmall(b *testing.B) {
 	fixture := make([]byte, 0, len(smallFixture))
 	b.ResetTimer()
@@ -159,6 +220,16 @@ func BenchmarkJsonParserDelSmall(b *testing.B) {
 /*
    encoding/json
 */
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkEncodingJsonStructSmall(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		var data SmallPayload
@@ -168,6 +239,16 @@ func BenchmarkEncodingJsonStructSmall(b *testing.B) {
 	}
 }
 
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkEncodingJsonInterfaceSmall(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		var data interface{}
@@ -181,7 +262,16 @@ func BenchmarkEncodingJsonInterfaceSmall(b *testing.B) {
 /*
    github.com/Jeffail/gabs
 */
-
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkGabsSmall(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		json, _ := gabs.ParseJSON(smallFixture)
@@ -198,7 +288,16 @@ func BenchmarkGabsSmall(b *testing.B) {
 /*
    github.com/bitly/go-simplejson
 */
-
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkGoSimplejsonSmall(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		json, _ := simplejson.NewJson(smallFixture)
@@ -212,6 +311,16 @@ func BenchmarkGoSimplejsonSmall(b *testing.B) {
 	}
 }
 
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkGoSimplejsonSetSmall(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		json, _ := simplejson.NewJson(smallFixture)
@@ -228,7 +337,16 @@ func BenchmarkGoSimplejsonSetSmall(b *testing.B) {
 /*
    github.com/pquerna/ffjson
 */
-
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkFFJsonSmall(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		var data SmallPayload
@@ -241,7 +359,16 @@ func BenchmarkFFJsonSmall(b *testing.B) {
 /*
    github.com/bitly/go-simplejson
 */
-
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkJasonSmall(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		json, _ := jason.NewObjectFromBytes(smallFixture)
@@ -258,6 +385,16 @@ func BenchmarkJasonSmall(b *testing.B) {
 /*
    github.com/mreiferson/go-ujson
 */
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkUjsonSmall(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		json, _ := ujson.NewFromBytes(smallFixture)
@@ -274,6 +411,16 @@ func BenchmarkUjsonSmall(b *testing.B) {
 /*
    github.com/a8m/djson
 */
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkDjsonSmall(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		m, _ := djson.DecodeObject(smallFixture)
@@ -284,6 +431,16 @@ func BenchmarkDjsonSmall(b *testing.B) {
 /*
    github.com/ugorji/go/codec
 */
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkUgirjiSmall(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		decoder := codec.NewDecoderBytes(smallFixture, new(codec.JsonHandle))
@@ -297,6 +454,16 @@ func BenchmarkUgirjiSmall(b *testing.B) {
 /*
    github.com/mailru/easyjson
 */
+// Verifies: STK-REQ-001
+// MCDC STK-REQ-001: N/A
+// Verifies: STK-REQ-003
+// MCDC STK-REQ-003: N/A
+// Verifies: STK-REQ-004
+// MCDC STK-REQ-004: N/A
+// Verifies: STK-REQ-005
+// MCDC STK-REQ-005: N/A
+// Verifies: STK-REQ-007
+// MCDC STK-REQ-007: N/A
 func BenchmarkEasyJsonSmall(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		lexer := &jlexer.Lexer{Data: smallFixture}

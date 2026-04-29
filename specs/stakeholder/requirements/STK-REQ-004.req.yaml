@@ -1,0 +1,95 @@
+id: STK-REQ-004
+version: 1
+status: review
+priority: shall
+category: functional
+req_type: guarantee
+fretish: ""
+description: Library users shall traverse arrays and objects and extract multiple key paths from one payload without manually walking the JSON structure.
+formalization_strategy: informal
+informal_verification:
+    method: ""
+    evidence: ""
+    verified: false
+component: parser
+rationale: The traversal helpers and EachKey are part of the library's value proposition for dynamic JSON inspection without struct predeclaration or hand-written walkers.
+tags:
+    - traversal
+    - decomposition
+variables: []
+traces:
+    documented_by_extra:
+        - README.md
+    reviewed_at: "2026-04-27T06:25:19.202291Z"
+    reviewed_by: human:leonidbugaev
+verification:
+    assurance_level: E
+    formalization_status: none
+    review:
+        status: approved
+        reviewer: human:leonidbugaev
+        reviewed_at: "2026-04-23T00:00:00Z"
+        ai_generated: false
+history:
+    created_by: human:cli
+    created_at: "2026-04-13T17:10:34Z"
+    last_modified_by: agent:codex
+    last_modified_at: "2026-04-14T15:45:00Z"
+stakeholder:
+    persona: Go developers traversing dynamic JSON structures
+    story: As a Go developer inspecting dynamic JSON payloads, I want traversal helpers that iterate arrays and objects and resolve multiple paths in one scan so that I can process payloads without writing custom walkers.
+    acceptance_criteria:
+        - id: AC-1
+          text: A caller can iterate an addressed JSON array in encounter order, receive no callbacks for a well-formed empty addressed array, and receive an error for malformed or otherwise unusable array input.
+          testable: true
+          derived_reqs:
+            - SYS-REQ-006
+            - SYS-REQ-028
+            - SYS-REQ-029
+            - SYS-REQ-052
+            - SYS-REQ-053
+            - SYS-REQ-055
+            - SYS-REQ-083
+        - id: AC-2
+          text: A caller can iterate an addressed JSON object and receive the correct key, value, and value type tuples for well-formed entries, no entries for well-formed empty objects, propagated callback errors, and an error for malformed or otherwise unusable object input.
+          testable: true
+          derived_reqs:
+            - SYS-REQ-007
+            - SYS-REQ-030
+            - SYS-REQ-031
+            - SYS-REQ-032
+            - SYS-REQ-054
+            - SYS-REQ-084
+        - id: AC-3
+          text: A caller can request multiple key paths from one payload scan and receive the correct found or missing-path behavior for each requested path.
+          testable: true
+          derived_reqs:
+            - SYS-REQ-008
+            - SYS-REQ-085
+            - SYS-REQ-097
+            - SYS-REQ-098
+            - SYS-REQ-099
+    obligation_checklist:
+        - nominal
+        - empty_input
+        - malformed_input
+        - truncated_at_value_boundary
+        - truncated_mid_structure
+        - truncated_mid_element
+        - callback_error_propagation
+        - sentinel_value_boundary
+        - determinism
+        - nil_safety
+        - edge_case
+lifecycle:
+    change_history:
+        - date: "2026-04-13T17:14:56Z"
+          from: draft
+          to: review
+          reason: ""
+          changed_by: human:cli
+        - date: "2026-04-14T15:45:00Z"
+          from: review
+          to: review
+          reason: Strengthened stakeholder traversal acceptance criteria to match decomposed array and object behaviors.
+          changed_by: agent:codex
